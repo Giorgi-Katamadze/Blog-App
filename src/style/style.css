@@ -1,0 +1,23 @@
+.card{
+    position: relative;
+    height: 350px;
+}
+
+.id{
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:active{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+}
