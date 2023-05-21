@@ -4,7 +4,7 @@ const userId = urlParams.get('userId');
 const postId = urlParams.get('id');
 
 // Fetch and display the specific post
-function fetchPost() {
+async function fetchPost() {
   fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
     .then((res) => res.json())
     .then((post) => {
@@ -14,6 +14,7 @@ function fetchPost() {
         .then((res) => res.json())
         .then((comments) => {
           displayComments(comments);
+          commentCount(comments) 
           console.log(comments);
         })
         .catch((error) => {
@@ -47,7 +48,7 @@ function displayComments(comments) {
   commentsContainer.innerHTML = comments
     .map(
       (comment) => `
-    <div class="card w-50 p-3">
+    <div class="card comment p-3 col-10">
             <div class="card-body">
                 <h5 class="card-title">${comment.name}</h5>
                 <p class="card-text">${comment.body}</p>
@@ -59,6 +60,13 @@ function displayComments(comments) {
     `
     )
     .join('');
+}
+
+function commentCount(comments) {
+  const commentCount = document.getElementById('commentCount')
+  commentCount.innerHTML = `
+  <h1>${comments.length} Comments</h1>
+  `
 }
 
 fetchPost();

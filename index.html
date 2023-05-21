@@ -5,19 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style/style.css">
+    <script src="https://kit.fontawesome.com/eb8c74d9a4.js" crossorigin="anonymous"></script>
     <title>Blog-Post</title>
 </head>
 <body>
-    <header class="d-flex justify-content-center mt-5">
-        <h1>Hello! This is Blog-post web page</h1>
-    </header>
-
-    <main id="posts" class="d-flex flex-wrap gap-2 justify-content-start col-10 mx-auto my-5"></main>
-    <div id="pagination" class="my-5 d-flex justify-content-center gap-2">
-        <button onclick="previousPage()">Previous</button>
-        <button onclick="nextPage()">Next</button>
-      </div>
+    <main class="d-flex">
+        <nav class="col-1 d-flex flex-column align-items-center justify-content-between p-5">
+            <div class="d-flex flex-column align-items-center gap-2">
+                <button id="user"><i class="fa-solid fa-user fa-2xl"></i></button>
+                <article>user</article>
+            </div>
+            <div class="d-flex flex-column align-items-center gap-2">
+                <button id="create"><i class="fa-solid fa-plus fa-2xl"></i></button>
+                <article>Create</article>
+            </div>
+            <div class="d-flex flex-column align-items-center gap-2">
+                <button id="logIn"><i class="fa-solid fa-right-to-bracket fa-2xl"></i></button>
+                <article>Log In</article>
+            </div>
+        </nav>
+        <section class="">
+            <div id="posts" class="mb-5 pb-5"></div>
+            <div id="pagination" class="col-12 d-flex justify-content-center gap-2 py-3">
+                <button onclick="previousPage()">Previous</button>
+                <button onclick="nextPage()">Next</button>
+            </div>
+        </section>
+    </main>
 
 
     <script src="./src/script/script.js"></script>

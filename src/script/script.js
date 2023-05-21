@@ -10,9 +10,9 @@ async function fetchPosts() {
   fetch('https://jsonplaceholder.typicode.com/posts')
     .then((res) => res.json())
     .then((data) => {
-      currentPosts = data;
+      currentPosts = capitalizeFirstLetter(data);
       displayPosts(currentPage);
-      console.log(data);
+      console.log(currentPosts);
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -29,18 +29,17 @@ function displayPosts(page) {
     .map(
       (post) => `
       <a href="postPage.html?userId=${post.userId}&id=${post.id}">
-      <div class="card p-3" style="width: 18rem;">
-            <h5 class="card-title">${post.title}</h5>
-            <p class="card-text mb-5">${post.body}</p>
-            <div class="id">
-                <p>${post.id}</p>
-            </div>
+      <div class="card col-8 mx-auto p-3 pt-5 my-5">
+        <div class="d-flex gap-3 mt-3">
+            <p class="id">#${post.id}</p>
+            <h5 class="card-title">${post.title}</h5> 
+        </div>
+            <p class="card-text">${post.body}</p>
       </div>
       </a>
     `
     )
     .join('');
-
   updatePagination(page);
 }
 
@@ -49,12 +48,18 @@ function displayPosts(page) {
 function updatePagination() {
   const totalPages = Math.ceil(currentPosts.length / postsPerPage);
   paginationContainer.innerHTML = '';
+
   if (totalPages > 1) {
-    const createButton = (label, onClick, disabled = false) => {
+    const createButton = (label, onClick, disabled = false, isSelected = false) => {
       const button = document.createElement('button');
       button.textContent = label;
       button.onclick = onClick;
       button.disabled = disabled;
+
+      if (isSelected) {
+        button.style.borderBottom = '1px solid #6EEB83';
+      }
+
       return button;
     };
 
@@ -64,7 +69,7 @@ function updatePagination() {
 
     for (let i = 1; i <= totalPages; i++) {
       paginationContainer.appendChild(
-        createButton(i, () => goToPage(i), i === currentPage)
+        createButton(i, () => goToPage(i), i === currentPage, i === currentPage)
       );
     }
 
@@ -83,4 +88,21 @@ function goToPage(page) {
   displayPosts(currentPage);
 }
 
+// capitalize all text element's first letter
+
+function capitalizeFirstLetter(data) {
+  return data.map((post) => {
+    return {
+      ...post,
+      title: post.title.charAt(0).toUpperCase() + post.title.slice(1),
+      body: post.body.charAt(0).toUpperCase() + post.body.slice(1)
+    };
+  });
+}
+
 fetchPosts();
+
+const create = document.getElementById('create');
+create.addEventListener('click', () => {
+  window.location.href = 'create.html';
+});

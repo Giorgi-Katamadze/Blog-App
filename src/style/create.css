@@ -1,0 +1,28 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+button{
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-bottom: 1px solid  #6EEB83;
+    font-size: 30px;
+}
+button:hover{
+    padding-bottom: 2px;
+    box-shadow: 0 4px 2px -2px #6EEB83;
+}
+
+form{
+    border-left: 1px solid  #6EEB83;
+    border-right: 1px solid  #6EEB83;
+}
+h1{
+    border-bottom: 1px solid  #6EEB83;
+}
+.show{
+    display: none;
+}
+.red{
+    color: red;
+}

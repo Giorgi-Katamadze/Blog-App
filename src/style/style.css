@@ -1,12 +1,28 @@
-.card{
-    position: relative;
-    height: 350px;
-}
+/* *{
+    border: 1px dashed white;
+} */
 
+body{
+    background-color: #272727;
+    color: #F5F5F5;
+}
+.card{
+    background-color:#272727;
+    color: #F5F5F5;
+    border: none;
+    border-radius: unset;
+    border-bottom: 1px solid #6EEB83;
+}
+.card::first-letter{
+    text-transform: capitalize;
+}
 .id{
-    position: absolute;
-    bottom: 0;
-    right: 5%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+}
+.card-title{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 40px;
 }
 
 a{
@@ -20,4 +36,40 @@ a:active{
 a:hover{
     text-decoration: none;
     color: black;
+}
+
+main{
+    position: relative;
+}
+nav{
+    border-right: 1px solid #6EEB83;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+}
+nav button{
+    color: #6EEB83; 
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #6EEB83;
+    width: 70px;
+    height: 70px;
+}
+#pagination{
+    position: fixed;
+    bottom: 0;
+    background-color: #272727;
+}
+#pagination button{
+  border: none;
+  background-color: transparent;
+  color: #F5F5F5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+}
+#pagination button:last-of-type{
+    border-bottom: 1px solid #6EEB83;
+}
+#pagination button:first-of-type{
+    border-bottom: 1px solid #6EEB83;
 }
