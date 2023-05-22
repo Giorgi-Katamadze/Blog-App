@@ -17,25 +17,40 @@
 </head>
 <body>
     
-    <header class="d-flex justify-content-center my-5">
-        <h1>Create Your Blog</h1>
-    </header>
+    <main class="d-flex">
+        <nav class="col-1 d-flex flex-column align-items-center justify-content-between p-5">
+            <div class="d-flex flex-column align-items-center gap-2">
+                <button id="home"><i class="fa-solid fa-house fa-2xl"></i></button>
+                <article>Home</article>
+            </div>
+            <div class="d-flex flex-column align-items-center gap-2">
+                <button id="create"><i class="fa-solid fa-plus fa-2xl"></i></button>
+                <article>Create</article>
+            </div>
+        </nav>
 
-    <form class="d-flex flex-column align-items-center gap-5 col-8 mx-auto">
-        <div class="d-flex flex-column justify-content-start col-10 gap-2">
-            <label for="title">Name:</label>
-            <input type="text" id="title" placeholder="Type Blog's Name">
-            <span class="title-span show red">Required field</span>
-        </div>
-        <div class="d-flex flex-column justify-content-start col-10 gap-2">
-            <label for="body">Blog:</label>
-            <textarea placeholder="Type Something Here" id="body"  rows="10"></textarea>
-            <span class="body-span show red">Required field</span>
-        </div>
-        <div>
-            <button type="submit" id="submitBtn">Submit</button>
-        </div>
-    </form>
+            <form class="col-11 mt-5">
+                <header class="d-flex justify-content-center">
+                    <h1>Create Your Blog</h1>
+                </header>
+                <div class="d-flex flex-column align-items-center gap-5 col-10 mx-auto">
+                    <div class="d-flex flex-column justify-content-start col-10 gap-2">
+                        <label for="title">Name:</label>
+                        <input type="text" id="title" placeholder="Type Blog's Name">
+                        <span class="title-span show red">Required field</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-start col-10 gap-2">
+                        <label for="body">Blog:</label>
+                        <textarea placeholder="Type Something Here" id="body"  rows="10"></textarea>
+                        <span class="body-span show red">Required field</span>
+                    </div>
+                    <div>
+                        <button type="submit" id="submitBtn">Submit</button>
+                    </div>
+                </div>    
+            </form>
+    </main>
+   
 
     <script src="./src/script/create.js"></script>
 </body>

@@ -1,3 +1,24 @@
 .comment{
     border: 1px solid #6EEB83;
 }
+.userCard{
+    border:  1px solid  #6EEB83;
+    border-radius: 8px;
+}
+nav{
+    position: sticky;
+    top:0
+    }
+    nav button{
+       font-size: unset;
+    }
+    nav button:hover{
+       font-size: unset;
+       box-shadow: none;
+    }
+    button{
+        border: none;
+        background-color: transparent;
+        color: white;
+        font-size: 50px;
+    }

@@ -35,12 +35,8 @@ async function submit() {
         text: 'Want to check it?',
         icon: 'success',
         showCancelButton: true,
-        confirmButtonText: 'Go to Post',
-        cancelButtonText: 'Main Page',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = 'yourPost.html';
-        } else if (result.isDismissed) {
+        confirmButtonText: 'Go to Main Page',
+        preConfirm: () => {
           window.location.href = 'index.html';
         }
       });
@@ -56,4 +52,8 @@ async function submit() {
   }
 }
 
-submitBtn.addEventListener('click', validate);
+document.querySelector('form').addEventListener('submit', validate);
+const homeBtn = document.getElementById('home')
+home.addEventListener('click', () =>{
+window.location.href = 'index.html'
+})

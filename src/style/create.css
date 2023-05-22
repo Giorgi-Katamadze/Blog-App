@@ -13,10 +13,7 @@ button:hover{
     box-shadow: 0 4px 2px -2px #6EEB83;
 }
 
-form{
-    border-left: 1px solid  #6EEB83;
-    border-right: 1px solid  #6EEB83;
-}
+
 h1{
     border-bottom: 1px solid  #6EEB83;
 }
@@ -25,4 +22,15 @@ h1{
 }
 .red{
     color: red;
+}
+
+nav{
+position: static;
+}
+nav button{
+   font-size: unset;
+}
+nav button:hover{
+   font-size: unset;
+   box-shadow: none;
 }

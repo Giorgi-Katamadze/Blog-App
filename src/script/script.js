@@ -28,7 +28,7 @@ function displayPosts(page) {
   postsContainer.innerHTML = paginatedPosts
     .map(
       (post) => `
-      <a href="postPage.html?userId=${post.userId}&id=${post.id}">
+      <a href="postPage.html?id=${post.id}">
       <div class="card col-8 mx-auto p-3 pt-5 my-5">
         <div class="d-flex gap-3 mt-3">
             <p class="id">#${post.id}</p>
