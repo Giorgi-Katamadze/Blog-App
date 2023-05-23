@@ -16,7 +16,20 @@ nav{
        font-size: unset;
        box-shadow: none;
     }
-    button{
+    .show{
+        display: none;
+    }
+    .red{
+        color: red;
+    }
+    #submitBtn{
+        background-color: transparent;
+        color: white;
+        border-bottom: 1px solid  #6EEB83;
+        font-size: 30px;
+    }
+
+    header button{
         border: none;
         background-color: transparent;
         color: white;

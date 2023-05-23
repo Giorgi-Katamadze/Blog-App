@@ -7,17 +7,16 @@ let currentPosts = [];
 // fetch data
 
 async function fetchPosts() {
-  fetch('https://jsonplaceholder.typicode.com/posts')
-    .then((res) => res.json())
-    .then((data) => {
-      currentPosts = capitalizeFirstLetter(data);
-      displayPosts(currentPage);
-      console.log(currentPosts);
-    })
-    .catch((error) => {
+  try{
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const data = await res.json()
+     currentPosts = capitalizeFirstLetter(data);
+     displayPosts(currentPage);
+     console.log(currentPosts);
+      }catch (error) {
       console.error('Error:', error);
-    });
-}
+    }
+  }
 
 // get data in document
 
