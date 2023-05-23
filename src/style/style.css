@@ -74,3 +74,30 @@ nav button{
 #pagination button:first-of-type{
     border-bottom: 1px solid #6EEB83;
 }
+
+@media (max-width: 992px) {
+    nav{
+        width: 100vw;
+        height: 130px;
+        flex-direction: row;
+        position: fixed;
+        background-color: #272727;
+        border-bottom: 1px solid #6EEB83;
+        border-right: none;
+    }
+    .card-title{
+        font-family: 'Abril Fatface', cursive;
+        font-size: 20px;
+    }
+    #pagination button{
+        font-size: 15px;
+      }
+    
+}
+@media (min-width: 600px) {
+    #pagination button{
+        font-size: 25px;
+      }
+
+}
+

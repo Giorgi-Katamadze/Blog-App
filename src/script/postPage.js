@@ -33,13 +33,12 @@ async function fetchPost() {
 function displaySinglePost(post, user, userAddress, userCompany) {
   const postContainer = document.getElementById('post');
   postContainer.innerHTML = `
-    <header class="d-flex justify-content-end col-12 gap-5">
-        <div class="d-flex flex-column gap-5 justify-content-center mx-5 p-5">
+    <header class="d-flex flex-column flex-column-reverse flex-lg-row justify-content-lg-around my-5 py-3">
+        <div class="d-flex gap-5 flex-lg-column justify-content-around mx-5 mx-lg-2 p-3 p-lg-1">
             <button id="delete"><i class="fa-solid fa-trash"></i></button>
             <button id="edit"><i class="fa-solid fa-pen-to-square"></i></button>
         </div>
-        <div class="card userCard w-85">
-          <div class="card-body d-flex gap-5 justify-content-end">
+        <div class="d-flex userCard col-8 mx-auto p-3">
               <div>
                   <h5 class="card-title">User: </br>${user.name}</h5>
                   <p class="card-text">${user.username}</p>
@@ -48,13 +47,11 @@ function displaySinglePost(post, user, userAddress, userCompany) {
               </div>
               <div>
                   <h5 class="card-title">Company: </br> ${userCompany.bs}</h5>
-
               </div>
-          </div>
         </div>
     </header>
-    <div class="card w-75">
-      <div class="card-body">
+    <div class="col-12 d-flex justify-content-center my-5">
+      <div class="col-10">
         <h5 class="card-title">${post.title}</h5>
         <p class="card-text">${post.body}</p>
       </div>
@@ -65,25 +62,23 @@ function displaySinglePost(post, user, userAddress, userCompany) {
   const editBtn = postContainer.querySelector('#edit');
   editBtn.addEventListener('click', async () => {
     postContainer.innerHTML = `
-      <header class="d-flex justify-content-end col-12 gap-5">
-          <div class="d-flex flex-column gap-5 justify-content-center mx-5 p-5">
-              <button id="delete"><i class="fa-solid fa-trash"></i></button>
-              <button id="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+    <header class="d-flex flex-column flex-column-reverse flex-lg-row justify-content-lg-around my-5 py-3">
+    <div class="d-flex gap-5 flex-lg-column justify-content-around mx-5 mx-lg-2 p-3 p-lg-1">
+        <button id="delete"><i class="fa-solid fa-trash"></i></button>
+        <button id="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+    </div>
+    <div class="d-flex userCard col-8 mx-auto p-3">
+          <div>
+              <h5 class="card-title">User: </br>${user.name}</h5>
+              <p class="card-text">${user.username}</p>
+              <p class="card-text">Address: ${userAddress.city}, ${userAddress.street} ${userAddress.suite} </p>
+              <p class="card-text">Number: ${user.phone}</p>
           </div>
-          <div class="card userCard w-85">
-            <div class="card-body d-flex gap-5 justify-content-end">
-                <div>
-                    <h5 class="card-title">User: </br>${user.name}</h5>
-                    <p class="card-text">${user.username}</p>
-                    <p class="card-text">Address: ${userAddress.city}, ${userAddress.street} ${userAddress.suite} </p>
-                    <p class="card-text">Number: ${user.phone}</p>
-                </div>
-                <div>
-                    <h5 class="card-title">Company: </br> ${userCompany.bs}</h5>
-                </div>
-            </div>
+          <div>
+              <h5 class="card-title">Company: </br> ${userCompany.bs}</h5>
           </div>
-      </header>
+    </div>
+</header>
       <div class="d-flex flex-column align-items-center gap-5 col-10 mx-auto">
           <div class="d-flex flex-column justify-content-start col-10 gap-2">
               <label for="title">Name:</label>
@@ -195,7 +190,7 @@ function displayComments(comments) {
   commentsContainer.innerHTML = comments
     .map(
       (comment) => `
-    <div class="card comment p-3 col-10">
+    <div class="comment p-3 col-8">
             <div class="card-body">
                 <h5 class="card-title">${comment.name}</h5>
                 <p class="card-text">${comment.body}</p>

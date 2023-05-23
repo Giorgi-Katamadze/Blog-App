@@ -28,7 +28,7 @@ function displayPosts(page) {
     .map(
       (post) => `
       <a href="postPage.html?id=${post.id}">
-      <div class="card col-8 mx-auto p-3 pt-5 my-5">
+      <div class="card col-10 col-lg-8 mx-auto p-3 pt-5 my-5">
         <div class="d-flex gap-3 mt-3">
             <p class="id">#${post.id}</p>
             <h5 class="card-title">${post.title}</h5> 
