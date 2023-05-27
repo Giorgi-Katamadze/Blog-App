@@ -15,3 +15,7 @@ Use FontAwesome icons and SweetAlert2 alerts;
 1. Delete post button (Optional);
 2. Add post page (Optional);
 3. Edit post page (Optional);
+
+
+### API
+https://jsonplaceholder.typicode.com/posts
